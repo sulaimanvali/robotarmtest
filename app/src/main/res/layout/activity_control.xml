@@ -1,0 +1,199 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.sulaimanvali.robotarmtest.ControlActivity"
+    android:layout_gravity="center_horizontal">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/led"
+            android:id="@+id/textView_led"
+            android:layout_column="0" />
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton_led"
+            android:layout_column="1"
+            android:clickable="true"
+            android:onClick="onLedPressed"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/grip"
+            android:id="@+id/textView_grip"
+            android:layout_column="0" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grip_close"
+            android:id="@+id/button_gripClose"
+            android:layout_column="1"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grip_open"
+            android:id="@+id/button_gripOpen"
+            android:layout_column="2"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/wrist"
+            android:id="@+id/textView_wrist"
+            android:layout_column="0" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wrist_up"
+            android:id="@+id/button_wristUp"
+            android:layout_column="1"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wrist_down"
+            android:id="@+id/button_wristDown"
+            android:layout_column="2"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/elbow"
+            android:id="@+id/textView_elbow"
+            android:layout_column="0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/elbow_up"
+            android:id="@+id/button_elbowUp"
+            android:layout_column="1"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/elbow_down"
+            android:id="@+id/button_elbowDown"
+            android:layout_column="2"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/stem"
+            android:id="@+id/textView_stem"
+            android:layout_column="0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stem_backward"
+            android:id="@+id/button_stemBackward"
+            android:layout_column="1"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stem_forward"
+            android:id="@+id/button_stemForward"
+            android:layout_column="2"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/base"
+            android:id="@+id/textView_base"
+            android:layout_column="0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/base_anticlockwise"
+            android:id="@+id/button_baseAnticlockwise"
+            android:layout_column="1"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/base_clockwise"
+            android:id="@+id/button_baseClockwise"
+            android:layout_column="2"
+            android:clickable="true"
+            style="@style/button_text"
+            android:background="@drawable/red_button" />
+    </TableRow>
+
+</TableLayout>

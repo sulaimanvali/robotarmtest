@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Robot Arm Test</string>
+    <string name="led">LED</string>
+    <string name="grip">Grip</string>
+    <string name="grip_close">Close</string>
+    <string name="grip_open">Open</string>
+    <string name="wrist">Wrist</string>
+    <string name="wrist_up">Up</string>
+    <string name="wrist_down">Down</string>
+    <string name="elbow">Elbow</string>
+    <string name="elbow_up">Up</string>
+    <string name="elbow_down">Down</string>
+    <string name="stem">Stem</string>
+    <string name="stem_forward">Forward</string>
+    <string name="stem_backward">Backward</string>
+    <string name="base">Base</string>
+    <string name="base_clockwise">↷</string>
+    <string name="base_anticlockwise">↶</string>
+    <string name="title_activity_about">About</string>
+    <string name="about_text1">Robot Arm Test V1.0.0.</string>
+    <string name="about_text2">Developed by Sulaiman.Vali@gmail.com.</string>
+    <string name="about_text3">Compatible with the robot arm with USB interface. Connect directly from Android device via USB OTG cable.</string>
+    <string name="action_about">About</string>
+
+</resources>
