@@ -27,26 +27,26 @@ import java.util.Iterator;
 
 public class ControlActivity extends ActionBarActivity {
 
-    private static final int VENDOR_ID = 4711; // i.e. 0x1267
+    private static final int VENDOR_ID  = 4711; // i.e. 0x1267
     private static final int PRODUCT_ID = 0;
 
     // byte 0
     private static final byte STOP_GRIP_WRIST_ELBOW_SHOULDER = 0x00;
-    private static final byte GRIP_CLOSE = 0x01;
-    private static final byte GRIP_OPEN = 0x02;
-    private static final byte WRIST_UP = 0x04;
-    private static final byte WRIST_DOWN = 0x08;
-    private static final byte ELBOW_UP = 0x10;
-    private static final byte ELBOW_DOWN = 0x20;
-    private static final byte STEM_BACKWARD = 0x40;
-    private static final byte STEM_FORWARD = (byte)0x80;
+    private static final byte GRIP_CLOSE         = 0x01;
+    private static final byte GRIP_OPEN          = 0x02;
+    private static final byte WRIST_UP           = 0x04;
+    private static final byte WRIST_DOWN         = 0x08;
+    private static final byte ELBOW_UP           = 0x10;
+    private static final byte ELBOW_DOWN         = 0x20;
+    private static final byte STEM_BACKWARD      = 0x40;
+    private static final byte STEM_FORWARD       = (byte)0x80;
     // byte 1
-    private static final byte BASE_STOP = 0x00;
-    private static final byte BASE_CLOCKWISE = 0x01;
+    private static final byte BASE_STOP          = 0x00;
+    private static final byte BASE_CLOCKWISE     = 0x01;
     private static final byte BASE_ANTICLOCKWISE = 0x02;
     // byte 2
-    private static final byte LED_OFF = 0x00;
-    private static final byte LED_ON = 0x01;
+    private static final byte LED_OFF            = 0x00;
+    private static final byte LED_ON             = 0x01;
 
     private UsbDevice device;
     private UsbManager manager;
@@ -60,14 +60,14 @@ public class ControlActivity extends ActionBarActivity {
         setContentView(R.layout.activity_control);
 
         Button gripClose = (Button) findViewById(R.id.button_gripClose);
-        Button gripOpen = (Button) findViewById(R.id.button_gripOpen);
-        Button wristUp = (Button) findViewById(R.id.button_wristUp);
+        Button gripOpen  = (Button) findViewById(R.id.button_gripOpen);
+        Button wristUp   = (Button) findViewById(R.id.button_wristUp);
         Button wristDown = (Button) findViewById(R.id.button_wristDown);
-        Button elbowUp = (Button) findViewById(R.id.button_elbowUp);
+        Button elbowUp   = (Button) findViewById(R.id.button_elbowUp);
         Button elbowDown = (Button) findViewById(R.id.button_elbowDown);
         Button stemBackward = (Button) findViewById(R.id.button_stemBackward);
-        Button stemForward = (Button) findViewById(R.id.button_stemForward);
-        Button baseClockwise = (Button) findViewById(R.id.button_baseClockwise);
+        Button stemForward  = (Button) findViewById(R.id.button_stemForward);
+        Button baseClockwise     = (Button) findViewById(R.id.button_baseClockwise);
         Button baseAnticlockwise = (Button) findViewById(R.id.button_baseAnticlockwise);
 
         View.OnTouchListener buttonListener = new View.OnTouchListener()
@@ -240,15 +240,15 @@ public class ControlActivity extends ActionBarActivity {
         {
             // byte 0
             case R.id.button_gripClose: byte0 = pressed ? GRIP_CLOSE : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_gripOpen: byte0 = pressed ? GRIP_OPEN : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_wristUp: byte0 = pressed ? WRIST_UP : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
+            case R.id.button_gripOpen:  byte0 = pressed ? GRIP_OPEN : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
+            case R.id.button_wristUp:   byte0 = pressed ? WRIST_UP : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
             case R.id.button_wristDown: byte0 = pressed ? WRIST_DOWN : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_elbowUp: byte0 = pressed ? ELBOW_UP : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
+            case R.id.button_elbowUp:   byte0 = pressed ? ELBOW_UP : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
             case R.id.button_elbowDown: byte0 = pressed ? ELBOW_DOWN : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
             case R.id.button_stemBackward: byte0 = pressed ? STEM_BACKWARD : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_stemForward: byte0 = pressed ? STEM_FORWARD : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
+            case R.id.button_stemForward:  byte0 = pressed ? STEM_FORWARD : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
             // byte 1
-            case R.id.button_baseClockwise: byte1 = pressed ? BASE_CLOCKWISE : BASE_STOP; break;
+            case R.id.button_baseClockwise:     byte1 = pressed ? BASE_CLOCKWISE : BASE_STOP; break;
             case R.id.button_baseAnticlockwise: byte1 = pressed ? BASE_ANTICLOCKWISE : BASE_STOP; break;
 
             default: byte0 = STOP_GRIP_WRIST_ELBOW_SHOULDER; byte1 = BASE_STOP; break;
