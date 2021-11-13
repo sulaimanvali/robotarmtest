@@ -31,15 +31,15 @@ public class ControlActivity extends ActionBarActivity {
     private static final int PRODUCT_ID = 0;
 
     // byte 0
-    private static final byte STOP_GRIP_WRIST_ELBOW_SHOULDER = 0x00;
-    private static final byte GRIP_CLOSE         = 0x01;
-    private static final byte GRIP_OPEN          = 0x02;
-    private static final byte WRIST_UP           = 0x04;
-    private static final byte WRIST_DOWN         = 0x08;
-    private static final byte ELBOW_UP           = 0x10;
-    private static final byte ELBOW_DOWN         = 0x20;
-    private static final byte STEM_BACKWARD      = 0x40;
-    private static final byte STEM_FORWARD       = (byte)0x80;
+    private static final byte STOP_GRIP_WRIST_ELBOW_STEM = 0x00;
+    private static final byte GRIP_CLOSE                 = 0x01;
+    private static final byte GRIP_OPEN                  = 0x02;
+    private static final byte WRIST_UP                   = 0x04;
+    private static final byte WRIST_DOWN                 = 0x08;
+    private static final byte ELBOW_UP                   = 0x10;
+    private static final byte ELBOW_DOWN                 = 0x20;
+    private static final byte STEM_BACKWARD              = 0x40;
+    private static final byte STEM_FORWARD               = (byte)0x80;
     // byte 1
     private static final byte BASE_STOP          = 0x00;
     private static final byte BASE_CLOCKWISE     = 0x01;
@@ -239,19 +239,19 @@ public class ControlActivity extends ActionBarActivity {
         switch (button.getId())
         {
             // byte 0
-            case R.id.button_gripClose: byte0 = pressed ? GRIP_CLOSE : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_gripOpen:  byte0 = pressed ? GRIP_OPEN : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_wristUp:   byte0 = pressed ? WRIST_UP : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_wristDown: byte0 = pressed ? WRIST_DOWN : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_elbowUp:   byte0 = pressed ? ELBOW_UP : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_elbowDown: byte0 = pressed ? ELBOW_DOWN : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_stemBackward: byte0 = pressed ? STEM_BACKWARD : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
-            case R.id.button_stemForward:  byte0 = pressed ? STEM_FORWARD : STOP_GRIP_WRIST_ELBOW_SHOULDER; break;
+            case R.id.button_gripClose: byte0 = pressed ? GRIP_CLOSE : STOP_GRIP_WRIST_ELBOW_STEM; break;
+            case R.id.button_gripOpen:  byte0 = pressed ? GRIP_OPEN : STOP_GRIP_WRIST_ELBOW_STEM; break;
+            case R.id.button_wristUp:   byte0 = pressed ? WRIST_UP : STOP_GRIP_WRIST_ELBOW_STEM; break;
+            case R.id.button_wristDown: byte0 = pressed ? WRIST_DOWN : STOP_GRIP_WRIST_ELBOW_STEM; break;
+            case R.id.button_elbowUp:   byte0 = pressed ? ELBOW_UP : STOP_GRIP_WRIST_ELBOW_STEM; break;
+            case R.id.button_elbowDown: byte0 = pressed ? ELBOW_DOWN : STOP_GRIP_WRIST_ELBOW_STEM; break;
+            case R.id.button_stemBackward: byte0 = pressed ? STEM_BACKWARD : STOP_GRIP_WRIST_ELBOW_STEM; break;
+            case R.id.button_stemForward:  byte0 = pressed ? STEM_FORWARD : STOP_GRIP_WRIST_ELBOW_STEM; break;
             // byte 1
             case R.id.button_baseClockwise:     byte1 = pressed ? BASE_CLOCKWISE : BASE_STOP; break;
             case R.id.button_baseAnticlockwise: byte1 = pressed ? BASE_ANTICLOCKWISE : BASE_STOP; break;
 
-            default: byte0 = STOP_GRIP_WRIST_ELBOW_SHOULDER; byte1 = BASE_STOP; break;
+            default: byte0 = STOP_GRIP_WRIST_ELBOW_STEM; byte1 = BASE_STOP; break;
         }
 
         sendCommand(byte0, byte1, byte2);
